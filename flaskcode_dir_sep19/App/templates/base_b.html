@@ -1,0 +1,22 @@
+{% extends 'base_a.html' %}
+{% block contenter %}
+
+    {{ super() }}
+    {% macro say() %}
+        <br/>
+        What does the fox say?
+    {% endmacro %}
+
+    {{ say() }}
+
+    {% macro fox_say(voice) %}
+        <br/>
+        The fox say:{{ voice }}.
+    {% endmacro %}
+
+    {{ fox_say('啊～唔') }}
+
+    {% from 'base_a.html' import show_yourself %}
+    {{ show_yourself() }}
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base_b.html' %}
+
+{% block footer %}
+    {{ super() }}
+
+    <ul>
+        {% for num in alist %}
+            {{ loop.index }}
+            {% if loop.first %}
+                :
+                <li style="color: aquamarine">{{ num }}</li>
+
+            {% elif loop.last %}
+                <li style="color: #ff3245">{{ num }}</li>
+            {% else %}
+                <li style="color: #6228ff">{{ num }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+{% endblock %}

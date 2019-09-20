@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block contenter %}
+    {{ super() }}
+    {{ code|upper|title }}
+
+    {{ code1|trim|reverse }}
+    {{ code2|striptags }}
+    {{ code2|safe }}
+{% endblock %}
