@@ -1,0 +1,90 @@
+{% extends "/bootstrap/base.html" %}
+{% block doc %}
+    {{ super() }}
+{% endblock %}
+{% block navbar %}
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">全部歌曲</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">歌手 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">歌曲类型</a></li>
+
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="搜索内容">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">登录</a></li>
+                    <li><a href="#">注册</a></li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+{% endblock %}
+{% block content %}
+    <div class="jumbotron" align="center">
+        <table class="table table-striped">
+            <tr>
+                <th>歌曲名</th>
+                <th>歌手名</th>
+                <th>作曲者</th>
+                <th>曲类型</th>
+                <th>秒时长</th>
+            </tr>
+
+            {% for song in songs.items %}
+                <tr>
+                    <td>{{ song.song_name }}</td>
+                    <td>{{ song.singer }}</td>
+                    <td>{{ song.writer }}</td>
+                    <td>{{ song.song_type }}</td>
+                    <td>{{ song.duration }}(s)</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+        <span>
+            {% if songs.has_prev %}
+                <a href="{{ url }}?page={{ songs.prev_num }}">上一页</a>
+            {% else %}
+                <a href="#">上一页</a>
+            {% endif %}
+        </span>
+        <span>
+        {% for i in range(1,songs.pages + 1) %}
+            {% if songs.page == i %}
+                <a href="{{ url }}?page={{ i }}" class="btn btn-default">{{ i }}</a>
+            {% else %}
+                <a href="{{ url }}?page={{ i }}">{{ i }}</a>
+            {% endif %}
+        {% endfor %}
+        </span>
+        <span>
+            {% if songs.has_next %}
+                <a href="{{ url }}?page={{ songs.next_num }}">下一页</a>
+            {% else %}
+                <a href="#">下一页</a>
+            {% endif %}
+        </span>
+        <hr/>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">全部歌曲</a></p>
+    </div>
+{% endblock %}

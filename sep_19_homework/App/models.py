@@ -14,10 +14,10 @@ class User(db.Model):
 
     __tablename__ = 'user_info'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    nickname = db.Column(db.String(20), nullable=False)
-    true_name = db.Column(db.String(20), nullable=False)
-    password = db.Column(db.String(40), nullable=False)
-    age = db.Column(db.Integer, default=0)
-    sex = db.Column(db.String(6), default='male')
-    tel = db.Column(db.String(11))
-    requ = db.Column(db.TEXT)
+    nickname = db.Column(db.String(20))
+    true_name = db.Column(db.String(20))
+    password = db.Column(db.String(40))
+    age = db.Column(db.Integer)
+    sex = db.Column(db.String(6))
+    tel = db.Column(db.String(20))
+    describe = db.Column(db.TEXT)

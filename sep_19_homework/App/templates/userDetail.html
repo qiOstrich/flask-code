@@ -2,7 +2,7 @@
 	<head>
 		<title>update Emp</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../static/style.css" />
 	</head>
 	<body>
 		<div id="wrap">
@@ -32,7 +32,7 @@
 					<table class="table">
 						<tr>
 							<td>
-								姓名
+								姓名:
 							</td>
 							<td>
 								电话
@@ -40,10 +40,10 @@
 						</tr>
 						<tr>
 							<td>
-								zhangshan
+								{{ name }}
 							</td>
 							<td>
-								010-12345678
+								{{ tel }}
 							</td>
 						</tr>
 					</table>
@@ -53,7 +53,7 @@
 					<table>
 						<tr>
 							<td colspan="2">
-								<textarea cols="80" style="border:0px;resize:none;"></textarea>
+								<textarea cols="80" style="border:0px;resize:none;">{{ describe }}</textarea>
 							</td>
 						</tr>
 					</table>
@@ -81,7 +81,7 @@
 								</tr>
 					</table>
 				</div>
-				<input type="button" onclick="location='userList.html'" value="查看所有用户"/>
+				<input type="button" onclick="location='{{ url_for('bp.userlist') }}'" value="查看所有用户"/>
 			</div>
 			<div id="footer">
 				<div id="footer_bg">

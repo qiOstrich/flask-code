@@ -15,3 +15,4 @@ def init_extends(app):
     db.init_app(app=app)
     migrate = Migrate()
     migrate.init_app(app=app, db=db)
+    

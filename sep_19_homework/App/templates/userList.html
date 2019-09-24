@@ -1,86 +1,102 @@
 ﻿<html>
-	<head>
-		<title>emplist</title>
-		<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
-	</head>
-	<body>
-		<div id="wrap">
-			<div id="top_content">
-				<div id="header">
-					<div id="rightheader">
-						<p>
-							2009/11/20
-							<br />
-						</p>
-					</div>
-					<div id="topheader">
-						<h1 id="title">
-							<a href="#">Main</a>
-						</h1>
-					</div>
-					<div id="navigation">
-					</div>
-				</div>
+<head>
+    <title>emplist</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../static/style.css"/>
+</head>
+<body>
+<div id="wrap">
+    <div id="top_content">
+        <div id="header">
+            <div id="rightheader">
+                <p>
+                    2009/11/20
+                    <br/>
+                </p>
+            </div>
+            <div id="topheader">
+                <h1 id="title">
+                    <a href="#">Main</a>
+                </h1>
+            </div>
+            <div id="navigation">
+            </div>
+        </div>
 
-				<div id="content">
-					<p id="whereami">
-					</p>
-					<h1>
-						Welcome!
-					</h1>
-					<table class="table">
-						<tr class="table_header">
-							<td>
-								ID
-							</td>
-							<td>
-								
-									zs
-								
-							</td>
-							<td>
-								Gendar
-							</td>
-							<td>
-								Age
-							</td>
-							<td>
+        <div id="content">
+            <p id="whereami">
+            </p>
+            <h1>
+                Welcome!
+            </h1>
+            <table class="table">
+                <tr class="table_header">
+                    <td>
+                        ID
+                    </td>
+                    <td>
+                        Nickname
+                    </td>
+                    <td>
+                        Gendar
+                    </td>
+                    <td>
+                        Age
+                    </td>
+                    <td>
+                        opration
+                    </td>
+                </tr>
+                {% for u in users.items %}
+                    <tr class="table_header">
+                        <td>{{ u.id }}</td>
+                        <td>{{ u.nickname }}</td>
+                        <td>{{ u.sex }}</td>
+                        <td>{{ u.age }}</td>
+                        <td>
+                            <a href="{{ url_for('bp.deleteUser') + '?deletename=' + u.nickname }}">删除</a>
+                            <a href="{{ url_for('bp.updateUser') + '?nickname=' + u.nickname }}">修改</a>
+                        </td>
 
-							</td>
-						</tr>
-						<tr class="row1">
-							<td>
-								1
-							</td>
-							<td>
-								<a href="userDetail.html">
-								zs
-								</a>
-							</td>
-							<td>
-								男
-							</td>
-							<td>
-								22
-							</td>
-							<td>
-								<a href="#">删除</a>
-								<a href='#'>修改</a>
-							</td>
-						</tr>
-					</table>
-					<p>
-						<input type="button" class="button" value="退出系统"
-							onclick="location='login.html'" />
-					</p>
-				</div>
-			</div>
-			<div id="footer">
-				<div id="footer_bg">
-					ABC@126.com
-				</div>
-			</div>
-		</div>
-	</body>
+                    </tr>
+                {% endfor %}
+            </table>
+            <div align="center">
+                <span>
+
+                        {% if users.has_prev %}
+                            <a href="{{ url_for('bp.userlist') }}?page={{ users.prev_num }}">上一页</a>
+                        {% else %}
+                            <a href="#">上一页</a>
+                        {% endif %}
+
+
+                </span>
+                <span>
+                        {% for numbers in range(1,users.pages + 1 ) %}
+                            <span>{{ numbers }}</span>
+                        {% endfor %}
+                </span>
+                <span>
+                        {% if users.has_next %}
+                            <a href="{{ url_for('bp.userlist') }}?page={{ users.next_num }}">下一页</a>
+                        {% else %}
+                            <a href="#">下一页</a>
+                        {% endif %}
+                </span>
+            </div>
+            <p>
+            <form action="/logout/" method="get">
+                <input type="submit" class="button" value="退出系统"/>
+            </form>
+            </p>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="footer_bg">
+            ABC@126.com
+        </div>
+    </div>
+</div>
+</body>
 </html>

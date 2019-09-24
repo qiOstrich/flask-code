@@ -14,7 +14,7 @@ class Develop(Config):
         'password': '123',
         'host': 'localhost',
         'port': '3306',
-        'database': 'exercise',
+        'database': 'study',
     }
     SQLALCHEMY_DATABASE_URI = get_database_uri(DATABASE)
 
@@ -27,7 +27,7 @@ class Test(Config):
         'password': '123',
         'host': 'localhost',
         'port': '3306',
-        'database': 'exercise',
+        'database': 'study',
     }
     SQLALCHEMY_DATABASE_URI = get_database_uri(DATABASE)
 
@@ -40,7 +40,7 @@ class Show(Config):
         'password': '123',
         'host': 'localhost',
         'port': '3306',
-        'database': 'exercise',
+        'database': 'study',
     }
     SQLALCHEMY_DATABASE_URI = get_database_uri(DATABASE)
 
@@ -53,7 +53,7 @@ class Product(Config):
         'password': '123',
         'host': 'localhost',
         'port': '3306',
-        'database': 'exercise',
+        'database': 'study',
     }
     SQLALCHEMY_DATABASE_URI = get_database_uri(DATABASE)
 ENV_SETTING={'develop':Develop,
