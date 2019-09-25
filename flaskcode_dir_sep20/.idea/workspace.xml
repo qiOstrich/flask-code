@@ -22,25 +22,18 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="exercise@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="study@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="exercise@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="study@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="exercise@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="study@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="exercise: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="exercise@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="exercise: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="You: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="study: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -133,7 +126,7 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f078d47c" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@a2fbbe50" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -154,6 +147,9 @@
       <workItem from="1568942007684" duration="1802000" />
       <workItem from="1568944631396" duration="787000" />
       <workItem from="1568945489940" duration="16036000" />
+      <workItem from="1568977156183" duration="16000" />
+      <workItem from="1569029190559" duration="170000" />
+      <workItem from="1569202631722" duration="168000" />
     </task>
     <servers />
   </component>
